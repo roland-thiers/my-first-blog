@@ -9,19 +9,15 @@
       <h1><a href="/">Roland Blog</a></h1>
     </div>
 
-    <div>
-      <p>published 24.12.2018, 15</p>
+{% for post in posts %}
 
-      <h2><a href="">Mon premier post</a></h2>
-      <p> C'est juste un essai</p>
-    </div>
+<div>    
+<p>published:{{ post.published_date }}</p>
+<h2><a  href="">{{post.title}}</a></h2>
+<p>{{post.text|linebreaksbr}}</p>
+</div>
 
-    <div>
-    <p>published 24.12.2018, 15</p>
-
-      <h2><a href="">Mon second post</a></h2>
-      <p> Essai réussi ?</p>
-    </div>
+{% endfor %}
 
   </body>
   </html>
