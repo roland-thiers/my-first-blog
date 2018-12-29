@@ -1,4 +1,4 @@
-modified:   monblog/blog/templates/blog/base.html
+#modified:   monblog/blog/templates/blog/base.html
 23 #       modified:   monblog/blog/templates/blog/post_detail.html
 24 #       new file:   monblog/blog/templates/blog/post_draft_list.html
 25 #       new file:   monblog/blog/templates/registration/login.html
