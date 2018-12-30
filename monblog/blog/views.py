@@ -19,7 +19,7 @@ def post_new(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.author = request.user
-            post.published_date = timezone.now()
+            
             post.save()
             return redirect('post_detail', pk=post.pk)
     else:
@@ -41,6 +41,9 @@ def post_edit(request, pk):
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
 
+def publish(self):
+    self.published_date = timezone.now()
+    self.save()
 
 @login_required
 def post_draft_list(request):
