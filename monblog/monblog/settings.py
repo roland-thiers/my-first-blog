@@ -53,13 +53,14 @@ ALLOWED_HOSTS = ['127.0.0.1', 'rolandiznogoud.pythonanywhere.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'blog'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog'
+    
 ]
 
 MIDDLEWARE = [
@@ -96,7 +97,7 @@ WSGI_APPLICATION = 'monblog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 from os.path import realpath
-DATABASE_NAME = realpath('database.db')
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
