@@ -100,7 +100,7 @@ from os.path import realpath
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': '/home/roland/siteweb/monblog/db.sqlite3',
     }
 }
 
