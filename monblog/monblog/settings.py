@@ -95,12 +95,12 @@ WSGI_APPLICATION = 'monblog.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
-from os.path import realpath
+
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': '/home/roland/siteweb/monblog/db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -144,3 +144,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 LOGIN_REDIRECT_URL = '/'
 #>>>>>>> df9cac445a26f59cf47170c04b6a557786518e07
+
