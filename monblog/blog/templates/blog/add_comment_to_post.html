@@ -1,6 +1,6 @@
 {% extends 'blog/base.html' %}
 
-{% block content %}
+{% block principal %}
 <h1>Nouveau commentaire</h1>
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
