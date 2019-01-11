@@ -6,14 +6,13 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">    
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">    
     
-<link href="//fonts.googleapis.com/css?family=Lobster&sbset=latin, latin-ext" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="{% static 'blog/style.css' %}">
+<link href="//fonts.googleapis.com/css?family=Lobster&sbset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="{% static 'css/blog.css' %}">
   
 </head>
 
 
 <body>
-
 
 
 <div class="page-header">
@@ -37,15 +36,39 @@
 
     </div>
 
-<div class="content container">
+
+
+{% for citation in citations|slice:":1" %}
+
+<div class="bandeau-citation">
+<h3>
+  {{ citation }}
+</br>
+<div class="auteur">
+{{ citation.author}}
+</br>
+{{citation.oeuvre}}
+ </div>
+</h3>
+</div>
+
+     {% endfor %}
+
+
+
+
+
+<div class="container">
   <div class="row">
-    <div class="col-lg-8">
+    <div class="col-lg-5">
              {% block principal %}
              {% endblock %}
     </div>
 
     
-    <div class="col-lg-4">
+
+    
+    <div class="col-lg-offset-3 col-lg-4">
       {% block menu %}
       
 {% endblock %}

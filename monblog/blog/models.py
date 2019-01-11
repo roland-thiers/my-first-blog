@@ -34,3 +34,13 @@ class Comment(models.Model):
 
     def approved_comments(self):
         return self.comments.filter(approved_comment=True)
+
+
+class Citation(models.Model):
+    author = models.CharField(max_length=200)
+    text = models.TextField()
+    oeuvre = models.CharField(max_length=200)
+
+
+    def __str__(self):
+        return self.text
