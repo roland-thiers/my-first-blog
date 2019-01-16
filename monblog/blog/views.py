@@ -2,8 +2,8 @@ from .forms import PostForm, CommentForm
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 from .models import Post, Comment, Citation
-from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
+from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 def post_list(request):
@@ -11,6 +11,7 @@ def post_list(request):
     citations = Citation.objects.all()
     return render(request, 'blog/post_list.html', {'posts':posts, 'citations':citations})
 
+    
 
 
 
@@ -98,3 +99,4 @@ def comment_remove(request, pk):
 
     
     
+

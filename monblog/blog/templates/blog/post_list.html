@@ -16,7 +16,7 @@
 
 {% for post in posts|slice:":1" %}
 
-<h2> {{ post.title  }} </h2>
+<h2><a href="/" >{{ post.title  }}</a> </h2>
 
 <p><h5> {{ post.text|linebreaksbr }} </h5></p>
 
@@ -25,8 +25,10 @@
 
 
     <hr> 
-    <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Faites un commentaire</a>
+    <a class="btn btn-default" href="{% url 'add_comment_to_post' pk=post.pk %}">Faites un commentaire</a> 
 
+<!--  ------------------------------------------------------------------------  -->
+    
 {% for comment in post.comments.all %}
     {% if user.is_authenticated or comment.approved_comment %}
     <div class="comment">
@@ -45,7 +47,9 @@
     <p>Pas encore de commentaires :(</p>
 {% endfor %}
 
- 
+<!--     -----------------------------------------------------------   -->
+
+    
 {% endfor %}
 
 
@@ -56,12 +60,12 @@
 
 
     {% block menu %}
-<h2 class="entete">Liste des billets publiés</h2>
+<h2 class="entete">Précédents billets</h2>
 
 
-      {% for post in posts %}
+      {% for post in posts|slice:"1:" %}
 
-</br>
+
 
       <h2><a href="{% url 'post_detail' pk=post.pk %}" >{{ post.title }}</a></h2>
       <h5><div class="date">{{ post.published_date }}</div></h5>
